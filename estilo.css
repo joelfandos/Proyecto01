@@ -1,5 +1,5 @@
 
-@import url(http://weloveiconfonts.com/api/?family=fontawesome|typicons);
+
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
 }

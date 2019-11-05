@@ -22,13 +22,13 @@
 				<div class="contenedor">
 					<h2>Reservas</h2>
 					<p>¿Quieres reservar un recurso?</p>
-					<a href="login.php" target="_blank">Reserva</a>
+					<a href="login.php">Reserva</a>
 				</div>
 			</section>
 			
 			<section id="bienvenidos">
 			<div class="contenedor">
-				<h2>BIENVENIDOS A RESERVAS</h2>
+				<h2>BIENVENIDOS A LA INTRANET DE MORFEO</h2>
 				
 				
 				</div>

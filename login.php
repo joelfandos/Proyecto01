@@ -24,14 +24,14 @@
 		<h2>Iniciar sesión</h2>
 	</div>
 
-	<form method="post" action="login.php">
+	<form method="post" action="./services/login.proc.php">
 		<div class="input-group">
 			<label>Usuario</label>
-			<input type="text" name="username">
+			<input type="text" name="username" id="username">
 		</div>
 		<div class="input-group">
 			<label>Contraseña</label>
-			<input type="password" name="password">
+			<input type="password" name="password" id="password">
 		</div>
 		<div class="input-group">
 			<button type="submit" name="login" class="btn">Iniciar sesión</button>
