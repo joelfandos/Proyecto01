@@ -1,8 +1,8 @@
 <?php
 	include("connection.php"); 
 
-	$sql ="SELECT * FROM recursos;";
-	$result = $conn->query($sql);
+		$sql ="SELECT * FROM recursos where status = 1;";
+	    $result = $conn->query($sql);
 
 	$data = array();
 	while ($fila = mysqli_fetch_row($result)) {
@@ -12,8 +12,7 @@
     		'RECURSO' => $fila[1],
     		'TIPO'   => $fila[2],
    			'DESCRIPCION' => $fila[3],
-   			'IMAGEN' => $fila[4],
-   			'DISPONIBLE' => 1
+   			'IMAGEN' => $fila[4]
 		);
 		$data[] = $sql_details;
 	}				
@@ -27,7 +26,5 @@
 		"aaData"=>$data);
 		echo json_encode($results);
 	
- 
+	
 ?>
-
-  
