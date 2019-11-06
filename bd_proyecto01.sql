@@ -176,6 +176,7 @@ ALTER TABLE `reserva`
 ALTER TABLE `recursos`
   ADD CONSTRAINT `tipo_fk` FOREIGN KEY (`tipo`) REFERENCES `tipos` (`id_tipo`);
 
+
 --
 -- Filtros para la tabla `reserva`
 --
@@ -187,3 +188,7 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+ALTER TABLE `recursos`
+  ADD CONSTRAINT `id_incidencia_fk` FOREIGN KEY (`id_incidencia_fk`) REFERENCES `incidencias` (`id_incidencia`);
