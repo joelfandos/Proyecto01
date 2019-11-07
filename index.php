@@ -3,16 +3,12 @@
 <head>
 	<title>Reservas</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="./plugins/datatables/datatables.min.css"/>
-	<link rel="stylesheet" type="text/css" href="./plugins/fontawesome/all.min.css"/>
-	<link rel="stylesheet" type="text/css" href="./plugins/bootstrap/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="estilo.css">
-	<link rel="icon" type="fotos/logo.png" href="fotos/logo.png">
+
 	
 </head>
 <body>
-	<?php include('header.php'); ?>
-
+	<?php include('header.php');
+?>
 
 	
 	<div class="modal fade" id="mdl_reserva" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -59,20 +55,19 @@
 			</div>
 		</div>
 			<section id="banner">
-				<img src="fotos/foto1.jpg">
-				<div class="contenedor">
-					<h2>Reservas</h2>
-					<p>¿Quieres reservar un recurso?</p>
-					<a href="#reserva">Reserva</a>
-				</div>
+				<h2 style="font:200 60px/1em Amatic SC; text-align: center;">Bienvenido a Reservas <?php echo $_SESSION['usr']; ?></h2>
 			</section>
 			
 			<section id="bienvenidos">
 			<div class="contenedor">
-				<h2>BIENVENIDOS A RESERVAS <?php echo $_SESSION['usr']; ?></h2>
+				
+				<div class="row">
 
-				<h3 align="left">Hola</h3>
-				<table id="tabla_resus" class="display">
+				<div class="col-6  table-bordered  bg-secondary" >
+				<table id="tabla_resus" class="display" style="background: gray; text-align: center;">
+					<h3>TUS RESERVAS</h3>
+					<h5>Haz click para finalizar tu reserva.</h5>
+
 		    			<thead>
 		            		<th>ID</th>
 		            		<th>RECURSO</th>
@@ -90,40 +85,39 @@
 
 		    			</tfoot>
 				</table>
+				</div>
+
+				<div class="col-6  table-bordered  bg-secondary" >
+				<table id="tabla1" class="display" style="background: gray; text-align: center;">
+					<h3>RESERVAS DISPONIBLES</h3>
+					<h5>Haz click para hacer la reserva.</h5>
+		    			<thead>
+
+		            		<th>ID</th>
+		            		<th>RECURSO</th>
+		            		<th>TIPO</th>
+		            		<th>DESCRIPCIÓN</th>
+		            		<th>IMAGEN</th>
+		    			</thead>
+		    			<tfoot>
+		            		<th></th>
+		            		<th></th>
+		            		<th></th>
+		            		<th></th>
+		            		<th></th>
+		    			</tfoot>
+				</table>
+				</div>
 				
+			</div>
 				</div>
 			</section>
 			   
-			<section id="info">
+			
 
-				<div class="contenedor">
-					<p>Reservas es una comunidad en la cual todos nos ayudamos, trata de reservar un recurso ya sea aulas como portátiles, móviles, entre otras cosas.</p>
-					</div>
-					
-				</div>
-			</section>
-<h4 id="#reserva">RESERVA</h4>
-			<div class="row">
-				<div class="col-1"></div>
-				<div class="col-10 bg-secondary">
-				<table id="tabla1" class="display">
-		    			<thead>
-		            		<th>ID</th>
-		            		<th>RECURSO</th>
-		            		<th>TIPO</th>
-		            		<th>DESCRIPCIÓN</th>
-		            		<th>IMAGEN</th>
-		    			</thead>
-		    			<tfoot>
-		            		<th></th>
-		            		<th></th>
-		            		<th></th>
-		            		<th></th>
-		            		<th></th>
-		    			</tfoot>
-				</table>
-				</div>
-				<div class="col-1"></div>
+			<div class="row" >
+				
+				
 			</div>
 		<footer>
 			<div class="contenedor">
@@ -182,7 +176,7 @@
 				});
 				$('#tabla1 tfoot th').each( function () {
         			var title = $(this).text();
-        		$(this).html( '<label type="text" placeholder="Search '+title+'" />' );
+        		$(this).html( '<label type="text" placeholder="Search '+title+'"  />' );
    				 } );
  				
  				$('#tabla1 tbody').on( 'click', 'tr', function () {
@@ -191,10 +185,10 @@
   					$('#lbl_recurso').text(data['RECURSO']);
   					switch(Number(data['TIPO'])) {
 					  case 1:
-					    $tipo ='INMUEBLE';
+					    $tipo ='Inmueble';
 					    break;					  
 					  case 2:
-					    $tipo ='ELECTRONICA';
+					    $tipo ='Electronica';
 					}
   					$('#tipo').text($tipo);
   					$('#desc').text(data['DESCRIPCION']);

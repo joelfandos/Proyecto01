@@ -10,13 +10,13 @@
 <body>
 	<header>
 	<div class="contenedor">
-		<img src="fotos/logo.png">
-		<h1>Reservas</h1>
+		
+		<h1>Reservas</h1><img src="fotos/logo.png">
 		
 		<label class="" for="menu-bar"></label>
 				<nav class="menu">
-					<a href="default.php">Inicio</a>
-					<a href="login.php">Login</a>
+					<a href="index.php">Inicio</a>
+					<a href="">Login</a>
 				</nav>
 			</div>
 </header>

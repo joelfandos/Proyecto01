@@ -3,9 +3,9 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="./plugins/datatables/datatables.min.css"/>
-	<link rel="stylesheet" type="text/css" href="./plugins/fontawesome/all.min.css"/>
+	<link rel="stylesheet" type="text/css" href="./plugins/fontawesome/all.min		.css"/>
 	<link rel="stylesheet" type="text/css" href="./plugins/bootstrap/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
 	<link rel="icon" type="fotos/logo.png" href="fotos/logo.png">
 </head>
 <body>
