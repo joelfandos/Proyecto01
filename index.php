@@ -3,7 +3,11 @@
 <head>
 	<title>Reservas</title>
 	<meta charset="utf-8">
-	
+	<link rel="stylesheet" type="text/css" href="./plugins/datatables/datatables.min.css"/>
+	<link rel="stylesheet" type="text/css" href="./plugins/fontawesome/all.min.css"/>
+	<link rel="stylesheet" type="text/css" href="./plugins/bootstrap/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link rel="icon" type="fotos/logo.png" href="fotos/logo.png">
 	
 </head>
 <body>
@@ -59,13 +63,15 @@
 				<div class="contenedor">
 					<h2>Reservas</h2>
 					<p>¿Quieres reservar un recurso?</p>
-					<a href="login.php">Reserva</a>
+					<a href="#reserva">Reserva</a>
 				</div>
 			</section>
 			
 			<section id="bienvenidos">
 			<div class="contenedor">
-				<h2>BIENVENIDOS A RESERVAS</h2>
+				<h2>BIENVENIDOS A RESERVAS <?php echo $_SESSION['usr']; ?></h2>
+
+				<h3 align="left">Hola</h3>
 				<table id="tabla_resus" class="display">
 		    			<thead>
 		            		<th>ID</th>
@@ -96,7 +102,7 @@
 					
 				</div>
 			</section>
-
+<h4 id="#reserva">RESERVA</h4>
 			<div class="row">
 				<div class="col-1"></div>
 				<div class="col-10 bg-secondary">
