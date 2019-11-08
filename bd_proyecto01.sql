@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-11-2019 a las 19:38:01
--- Versión del servidor: 10.1.31-MariaDB
--- Versión de PHP: 7.2.3
+-- Tiempo de generación: 08-11-2019 a las 15:28:29
+-- Versión del servidor: 10.1.38-MariaDB
+-- Versión de PHP: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bd_proyecto01`
 --
+CREATE DATABASE IF NOT EXISTS `bd_proyecto01` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `bd_proyecto01`;
 
 -- --------------------------------------------------------
 
@@ -42,24 +44,24 @@ CREATE TABLE `recursos` (
 --
 
 INSERT INTO `recursos` (`id_recurso`, `recurso`, `tipo`, `descripcion`, `imagen`, `status`) VALUES
-(1, 'sala_multidisciplinaria', 1, 'Sala para hacer yoga, baile, presentaciones...', 'fotos/foto2.jpg', 2),
-(2, 'sala_multidisciplinaria', 1, 'Sala para hacer yoga, baile, presentaciones...', 'fotos/foto2.jpg', 2),
-(3, 'sala_multidisciplinaria', 1, 'Sala para hacer yoga, baile, presentaciones...', 'fotos/foto2.jpg', 2),
-(4, 'sala_multidisciplinaria', 1, 'Sala para hacer yoga, baile, presentaciones...', 'fotos/foto2.jpg', 2),
-(5, 'sala_info01', 1, 'Sala de ordenadores para hacer informatica o distracciones.', 'fotos/foto3.jpg', 2),
-(6, 'sala_info02', 1, 'Sala de ordenadores para hacer informatica o distracciones.', 'fotos/foto3.jpg', 2),
-(7, 'taller_cocina', 1, 'Sala dedicada a los talleres de cocina.', 'fotos/foto4.jpg', 2),
-(8, 'despacho01', 1, 'Despacho para utilizarlo en entrevistas.', 'fotos/foto5.jpg', 1),
-(9, 'despacho02', 1, 'Despacho para utilizarlo en entrevistas.', 'fotos/foto5.jpg', 2),
-(10, 'salon_actos', 1, 'Salón dedicado para hacer actos con un gran número de personas.', 'fotos/foto6.jpg', 1),
-(11, 'sala_reuniones', 1, 'Sala para cualquier tipo de reuniones.', 'fotos/foto7.jpg', 1),
-(12, 'proyector01', 2, 'QKK AK-80', 'fotos/foto8.jpg', 1),
-(13, 'proyector02', 2, 'QKK AK-80', 'fotos/foto8.jpg', 1),
-(14, 'portatil01', 2, 'HP OMEN 15-dc1023ns', 'fotos/foto9.jpg', 1),
-(15, 'portatil02', 2, 'HP OMEN 15-dc1023ns', 'fotos/foto9.jpg', 1),
-(16, 'portatil03', 2, 'HP OMEN 15-dc1023ns', 'fotos/foto9.jpg', 1),
-(17, 'movil01', 2, 'Iphone 11', 'fotos/foto10.jpg', 1),
-(18, 'movil02', 2, 'Iphone 11', 'fotos/foto10.jpg', 1);
+(1, 'Sala Multidisciplinaria 1', 1, 'Sala para hacer yoga, baile, presentaciones...', 'fotos/foto2.jpg', 1),
+(2, 'Sala Multidisciplinaria 2', 1, 'Sala para hacer yoga, baile, presentaciones...', 'fotos/foto2.jpg', 1),
+(3, 'Sala Multidisciplinaria 3', 1, 'Sala para hacer yoga, baile, presentaciones...', 'fotos/foto2.jpg', 1),
+(4, 'Sala Multidisciplinaria 4', 1, 'Sala para hacer yoga, baile, presentaciones...', 'fotos/foto2.jpg', 1),
+(5, 'Sala de Informática 1', 1, 'Sala de ordenadores para hacer informatica o distracciones.', 'fotos/foto3.jpg', 1),
+(6, 'Sala de Informática 2', 1, 'Sala de ordenadores para hacer informatica o distracciones.', 'fotos/foto3.jpg', 1),
+(7, 'Taller de Cocina', 1, 'Sala dedicada a los talleres de cocina.', 'fotos/foto4.jpg', 1),
+(8, 'Despacho 1', 1, 'Despacho para utilizarlo en entrevistas.', 'fotos/foto5.jpg', 1),
+(9, 'Despacho 2', 1, 'Despacho para utilizarlo en entrevistas.', 'fotos/foto5.jpg', 1),
+(10, 'Salón de Actos', 1, 'Salón dedicado para hacer actos con un gran número de personas.', 'fotos/foto6.jpg', 1),
+(11, 'Sala de Reuniones', 1, 'Sala para cualquier tipo de reuniones.', 'fotos/foto7.jpg', 1),
+(12, 'Proyector 1', 2, 'QKK AK-80', 'fotos/foto8.jpg', 1),
+(13, 'Proyector 2', 2, 'QKK AK-80', 'fotos/foto8.jpg', 1),
+(14, 'Portátil 1', 2, 'HP OMEN 15-dc1023ns', 'fotos/foto9.jpg', 1),
+(15, 'Portátil 2', 2, 'HP OMEN 15-dc1023ns', 'fotos/foto9.jpg', 1),
+(16, 'Portátil 3', 2, 'HP OMEN 15-dc1023ns', 'fotos/foto9.jpg', 1),
+(17, 'Móvil 1', 2, 'Iphone 11', 'fotos/foto10.jpg', 1),
+(18, 'Móvil 2', 2, 'Iphone 11', 'fotos/foto10.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -80,18 +82,16 @@ CREATE TABLE `reserva` (
 --
 
 INSERT INTO `reserva` (`id_reserva`, `fecha_entrega`, `fecha_devolucion`, `id_recurso_fk`, `usuario_fk`) VALUES
-(1, '2019-11-05 20:28:22', '0000-00-00 00:00:00', 1, 'miguel'),
-(2, '2019-11-05 20:30:20', NULL, 1, 'MIGUEL'),
-(3, '2019-11-05 20:50:38', NULL, 2, 'miguel'),
-(4, '2019-11-06 16:59:44', NULL, 1, 'miguel'),
-(5, '2019-11-06 17:53:58', NULL, 1, 'miguel'),
-(6, '2019-11-06 17:54:07', NULL, 4, 'miguel'),
-(7, '2019-11-06 17:54:10', NULL, 2, 'miguel'),
-(8, '2019-11-06 17:57:09', NULL, 3, 'miguel'),
-(9, '2019-11-06 18:03:41', NULL, 5, 'miguel'),
-(10, '2019-11-06 18:25:46', NULL, 6, 'miguel'),
-(11, '2019-11-06 19:25:47', NULL, 9, 'miguel'),
-(12, '2019-11-06 19:26:15', NULL, 7, 'miguel');
+(5, '2019-11-06 17:53:58', '2019-11-08 15:22:02', 1, 'miguel'),
+(6, '2019-11-06 17:54:07', '2019-11-08 15:22:07', 4, 'miguel'),
+(7, '2019-11-06 17:54:10', '2019-11-08 15:22:04', 2, 'miguel'),
+(8, '2019-11-06 17:57:09', '2019-11-08 15:21:58', 3, 'miguel'),
+(9, '2019-11-06 18:03:41', '2019-11-08 15:22:06', 5, 'miguel'),
+(10, '2019-11-06 18:25:46', '2019-11-08 15:21:56', 6, 'miguel'),
+(11, '2019-11-06 19:25:47', '2019-11-08 15:22:09', 9, 'miguel'),
+(12, '2019-11-06 19:26:15', '2019-11-08 15:21:54', 7, 'miguel'),
+(13, '2019-11-08 15:23:15', '2019-11-08 15:23:29', 1, 'miguel'),
+(14, '2019-11-08 15:24:19', '2019-11-08 15:26:26', 8, 'joel');
 
 -- --------------------------------------------------------
 
@@ -201,7 +201,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `reserva`
 --
 ALTER TABLE `reserva`
-  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `status`

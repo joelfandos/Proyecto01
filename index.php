@@ -56,20 +56,22 @@
 		</div>
 			<section id="banner">
 				<img src="fotos/foto1.jpg">
-				<div class="contenedor">
-					<h2>Reservas</h2>
-					<p>¿Quieres reservar un recurso?</p>
-					<a href="login.php">Reserva</a>
+				<div class="contenedor" align="center">
+					<h2 style="font-size: 55px;">BIENVENIDO A TU SITIO DE RESERVAS - <?php echo $_SESSION['usr']; ?></h2>
+					<p>Reserva aquí tu recurso.</p>
+					
 				</div>
 			</section>
-			
+	
 			<section id="bienvenidos">
 			<div class="contenedor">
-				<h2>BIENVENIDOS A RESERVAS</h2>
+				
 				<div class="row">
-				<div class="col-1"></div>
-				<div class="col-10 bg-secondary">
-					<table id="tabla_resus" class="display">
+				<div class="col-6 table-bordered bg-secondary">
+					<table id="tabla_resus" class="display" style="background: gray;">
+						<br>
+					<h3>TUS RESERVAS</h3>
+					<h5>Haz click para finalizar tu reserva.</h5>
 			    			<thead>
 			            		<th>ID</th>
 			            		<th>RECURSO</th>
@@ -92,15 +94,13 @@
 			    			</tfoot>
 					</table>
 				</div>
-				<div class="col-1"></div>
-			</div>
+	
 				
-				
-				
-			<div class="row">
-				<div class="col-1"></div>
-				<div class="col-10 bg-secondary">
-				<table id="tabla1" class="display">
+				<div class="col-6 table-bordered bg-secondary">
+				<table id="tabla1" class="display" style="background: gray; ">
+					<br>
+				<h3>RESERVAS DISPONIBLES</h3>
+				<h5>Haz click para hacer la reserva.</h5>
 		    			<thead>
 		            		<th>ID</th>
 		            		<th>RECURSO</th>
@@ -117,12 +117,17 @@
 		    			</tfoot>
 				</table>
 				</div>
-				<div class="col-1"></div>
+	
 			</div>
+		</div>
+	</section>
+			<br>
 			<div class="row">
 				<div class="col-1"></div>
-				<div class="col-10 bg-secondary">
-				<table id="tabla_admin" class="display">
+				<div class="col-10 table-bordered bg-secondary">
+				<table id="tabla_admin" class="display" style="background: gray; ">
+					<br>
+					<h3 align="center">HISTORIAL DE RESERVAS</h3>
 		    			<thead>
 		            		<th>ID</th>
 		            		<th>RECURSO</th>
@@ -141,11 +146,16 @@
 				</div>
 				<div class="col-1"></div>
 			</div>
+			<br>
 		<footer>
 			<div class="contenedor">
-				<p>Reservas &copy; 2019</p>
+				
 				<div class="sociales">
+					<p>Reservas &copy; 2019</p>
 					<i class="fab fa-google" style="color:black;"></i>
+					<i class="fab fa-facebook" style="color:black;"></i>
+					<i class="fab fa-instagram" style="color:black;"></i>
+					<i class="fab fa-twitter" style="color:black;"></i>
 				</div>
 			</div>
 		</footer>
