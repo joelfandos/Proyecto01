@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-11-2019 a las 15:28:29
--- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.2
+-- Tiempo de generación: 08-11-2019 a las 18:36:34
+-- Versión del servidor: 10.1.31-MariaDB
+-- Versión de PHP: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -23,6 +23,34 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `bd_proyecto01` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `bd_proyecto01`;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `incidencia`
+--
+
+CREATE TABLE `incidencia` (
+  `id_incidencia` int(11) NOT NULL,
+  `fecha_entrega` datetime NOT NULL,
+  `fecha_devolucion` datetime DEFAULT NULL,
+  `descripcion` varchar(255) NOT NULL,
+  `id_recurso_fk` int(11) NOT NULL,
+  `usuario_fk` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `incidencia`
+--
+
+INSERT INTO `incidencia` (`id_incidencia`, `fecha_entrega`, `fecha_devolucion`, `descripcion`, `id_recurso_fk`, `usuario_fk`) VALUES
+(9, '2019-11-08 17:38:01', '2019-11-08 17:53:49', 'test', 1, 'miguel'),
+(10, '2019-11-08 17:53:10', '2019-11-08 17:53:45', 'test', 9, 'miguel'),
+(11, '2019-11-08 17:53:57', '2019-11-08 17:54:02', 'test', 1, 'miguel'),
+(12, '2019-11-08 18:08:16', NULL, 'test', 1, 'marc'),
+(13, '2019-11-08 18:08:29', NULL, 'test', 1, 'marc'),
+(14, '2019-11-08 18:12:35', NULL, 'test', 1, 'marc'),
+(15, '2019-11-08 18:27:12', '2019-11-08 18:27:38', 'REVISAR', 5, 'marc');
 
 -- --------------------------------------------------------
 
@@ -91,7 +119,25 @@ INSERT INTO `reserva` (`id_reserva`, `fecha_entrega`, `fecha_devolucion`, `id_re
 (11, '2019-11-06 19:25:47', '2019-11-08 15:22:09', 9, 'miguel'),
 (12, '2019-11-06 19:26:15', '2019-11-08 15:21:54', 7, 'miguel'),
 (13, '2019-11-08 15:23:15', '2019-11-08 15:23:29', 1, 'miguel'),
-(14, '2019-11-08 15:24:19', '2019-11-08 15:26:26', 8, 'joel');
+(14, '2019-11-08 15:24:19', '2019-11-08 15:26:26', 8, 'joel'),
+(15, '2019-11-08 16:33:59', '2019-11-08 16:34:02', 1, 'miguel'),
+(16, '2019-11-08 16:34:06', '2019-11-08 16:34:08', 1, 'miguel'),
+(17, '2019-11-08 16:35:25', '2019-11-08 16:35:29', 1, 'miguel'),
+(18, '2019-11-08 17:07:38', '2019-11-08 17:08:33', 13, 'miguel'),
+(19, '2019-11-08 17:08:41', '2019-11-08 17:09:02', 13, 'miguel'),
+(20, '2019-11-08 17:09:55', '2019-11-08 17:09:58', 14, 'miguel'),
+(21, '2019-11-08 17:10:02', '2019-11-08 17:10:05', 15, 'miguel'),
+(22, '2019-11-08 18:08:14', '2019-11-08 18:08:16', 1, 'marc'),
+(23, '2019-11-08 18:08:27', '2019-11-08 18:08:29', 1, 'marc'),
+(24, '2019-11-08 18:12:32', '2019-11-08 18:12:35', 1, 'marc'),
+(25, '2019-11-08 18:23:16', '2019-11-08 18:23:29', 2, 'joel'),
+(26, '2019-11-08 18:25:24', '2019-11-08 18:31:34', 12, 'marc'),
+(27, '2019-11-08 18:26:54', '2019-11-08 18:27:12', 5, 'marc'),
+(28, '2019-11-08 18:30:17', '2019-11-08 18:30:20', 3, 'marc'),
+(29, '2019-11-08 18:31:39', '2019-11-08 18:31:41', 4, 'marc'),
+(30, '2019-11-08 18:32:40', '2019-11-08 18:32:42', 5, 'marc'),
+(31, '2019-11-08 18:33:56', '2019-11-08 18:33:58', 6, 'marc'),
+(32, '2019-11-08 18:34:50', '2019-11-08 18:34:52', 7, 'marc');
 
 -- --------------------------------------------------------
 
@@ -152,13 +198,19 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`usuario`, `password`, `tipo_usu`, `nombre`, `apellido`, `email`) VALUES
-('joel', '81dc9bdb52d04dc20036dbd8313ed055', 0, 'Joel', 'Fandos', 'joel@gmail.com'),
-('marc', '81dc9bdb52d04dc20036dbd8313ed055', 0, 'Marc', 'Camós', 'marc@gmail.com'),
-('miguel', '81dc9bdb52d04dc20036dbd8313ed055', 0, 'Miguel', 'Conchouso', 'miguel@gmail.com');
+('joel', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'Joel', 'Fandos', 'joel@gmail.com'),
+('marc', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'Marc', 'Camós', 'marc@gmail.com'),
+('miguel', '81dc9bdb52d04dc20036dbd8313ed055', 2, 'Miguel', 'Conchouso', 'miguel@gmail.com');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `incidencia`
+--
+ALTER TABLE `incidencia`
+  ADD PRIMARY KEY (`id_incidencia`);
 
 --
 -- Indices de la tabla `recursos`
@@ -198,10 +250,16 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `incidencia`
+--
+ALTER TABLE `incidencia`
+  MODIFY `id_incidencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
 -- AUTO_INCREMENT de la tabla `reserva`
 --
 ALTER TABLE `reserva`
-  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT de la tabla `status`
