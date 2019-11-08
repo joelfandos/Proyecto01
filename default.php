@@ -12,7 +12,7 @@
 		<img src="fotos/logo.png">
 		<h1>Reservas</h1>
 				<nav class="menu">
-					<a href="index.html">Inicio</a>
+					<a href="default.php">Inicio</a>
 					<a href="login.php">Login</a>
 				</nav>
 			</div>

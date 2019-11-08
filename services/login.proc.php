@@ -13,7 +13,7 @@ if(!empty($result) && mysqli_num_rows($result)==1){
 	$_SESSION['usr'] = $use_requ;
 	echo '<meta http-equiv="Refresh" content="0;URL=../index.php">';
 }else{
-	echo '<meta http-equiv="Refresh" content="0;URL=./login.php">';
+	echo '<meta http-equiv="Refresh" content="0;URL=../login.php">';
 } 
 
 $conn->close();
