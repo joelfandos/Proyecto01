@@ -4,6 +4,7 @@
 	<title>Reservas</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<script type="text/javascript" src="codigo.js"></script>
 	<link rel="icon" type="fotos/logo.png" href="fotos/logo.png">
 </head>
 <body>
@@ -14,8 +15,8 @@
 		
 		<label class="" for="menu-bar"></label>
 				<nav class="menu">
-					<a href="index.html">Inicio</a>
-					<a href="">Login</a>
+					<a href="default.php">Inicio</a>
+					<a href="login.php">Login</a>
 				</nav>
 			</div>
 </header>
@@ -24,7 +25,8 @@
 		<h2>Iniciar sesión</h2>
 	</div>
 
-	<form method="post" action="./services/login.proc.php">
+	<form method="post" action="./services/login.proc.php" onsubmit="return formulario()">
+		<p id="mensaje" class="mensaje"></p>
 		<div class="input-group">
 			<label>Usuario</label>
 			<input type="text" name="username" id="username">
