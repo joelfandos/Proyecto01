@@ -4,5 +4,5 @@ Primer proyecto de DAW2.
 [Joel Fandos](https://joelfandos.github.io/) /
 [Marc Camós](https://maarccamos.github.io/) /
 [Miguel Angel Conchouso](https://conchouso.github.io/)
-# página de presentación
+# Página de presentación
 https://joelfandos.github.io/Proyecto01/
